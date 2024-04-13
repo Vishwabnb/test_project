@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rating: 1
+  customer: one
+  customer_type: Customer
+
+two:
+  rating: 1
+  customer: two
+  customer_type: Customer

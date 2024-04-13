@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @owner.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @owner.email %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @owner.phone %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @owner.age %>
+</p>
+
+<p>
+  <strong>Dob:</strong>
+  <%= @owner.dob %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @owner.address %>
+</p>
+
+<%= link_to 'Edit', edit_owner_path(@owner) %> |
+<%= link_to 'Back', owners_path %>
+
+<h1>Shop Details</h1>
+
+<% @owner.shop.each do |shop| %>
+ <div>
+    <p>Shop Name: <%= shop.name %></p>
+    <p>Shop Address: <%= shop.address %></p>
+    <p>Phone-no: <%= shop.phone_no %></p>
+    <p>Open time: <%= shop.open_time %></p>
+    <p>Close time: <%= shop.close_time %></p>
+    <p>email: <%= shop.email %></p>
+    ------------------------------------
+ </div>
+<% end %>
+
+<h2>Feedback </h2>
+
+<% if @feedbacks.any? %>
+  <% @feedbacks.each do |feedback| %>
+    <p>Rate:<%= feedback.rating %></p>
+    <p>Comments:<%= feedback.comment %></p>
+    <p>Customer:<%= feedback.customer.name %></p>
+  --==---==---====-----=====---===----
+  <% end %>
+<% else %>
+  <p>No feedbacks</p>
+<% end %>
+
+<br><br>
+<%= render partial: 'feedbacks/feedbackform', locals: { feedback: @feedback } %>

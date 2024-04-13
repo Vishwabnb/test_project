@@ -1,0 +1,48 @@
+<%= form_with(model: feedback, local: true) do |form| %>
+  <% if feedback.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(feedback.errors.count, "error") %> prohibited this feedback from being saved:</h2>
+
+      <ul>
+      <% feedback.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <% if @shop %>
+    <%= form.hidden_field :feedbackable_type, value: "Shop" %>
+    <%= form.hidden_field :feedbackable_id, value: @shop.id %>
+  <% elsif @order %>
+    <%= form.hidden_field :feedbackable_type, value: "Order" %>
+    <%= form.hidden_field :feedbackable_id, value: @order.id %>
+  <% elsif @item %>
+    <%= form.hidden_field :feedbackable_type, value: "Item" %>
+    <%= form.hidden_field :feedbackable_id, value: @item.id %>
+  <% elsif @owner %>
+    <%= form.hidden_field :feedbackable_type, value: "Owner" %>
+    <%= form.hidden_field :feedbackable_id, value: @owner.id %>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :rating %>
+    <%= form.number_field :rating %>
+  </div>
+
+  <div class="field">
+    <%= form.label :comment %>
+    <%= form.text_area :comment %>
+  </div>
+
+  <div class="field">
+    <%= form.label :customer_id , "Select Customer"%>
+    <%= form.collection_select :customer_id, Customer.all,:id,:name ,{include_blank: "Select Customer"} %>
+  </div>
+
+ 
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

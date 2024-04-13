@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @item.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @item.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @item.price %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @item.category.name %>
+</p>
+
+<p>
+  <strong>Stock:</strong>
+  <%= @item.stock %>
+</p>
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>
+
+<h2>Feedback </h2>
+
+<% if @feedbacks.any? %>
+  <% @feedbacks.each do |feedback| %>
+    <p>Rate:<%= feedback.rating %></p>
+    <p>Comment:<%= feedback.comment %></p>
+    <p>Customer:<%= feedback.customer.name %></p> 
+    --==---==---====-----=====---===----
+
+  <% end %>
+<% else %>
+  <p>No feedbacks</p>
+<% end %>
+
+<br><br>
+<%= render partial: 'feedbacks/feedbackform', locals: { feedback: @feedback } %>

@@ -1,0 +1,73 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @order.customer.name %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @order.status %>
+</p>
+
+<p>
+  <strong>Subtotal:</strong>
+  <%= @order.subtotal %>
+</p>
+<p>
+  <strong>Item discount:</strong>
+  <%= @order.item_discount %>
+</p>
+
+<p>
+  <strong>Tax:</strong>
+  <%= @order.tax %>
+</p>
+
+<p>
+  <strong>date:</strong>
+  <%= @order.date %>
+</p>
+
+<p>
+  <strong>Total:</strong>
+  <%= @order.total %>
+</p>
+
+<p>
+  <strong>Grand total:</strong>
+  <%= @order.grand_total %>
+</p>
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>
+
+<br><br>
+<h1>Order Items</h1>
+
+<% @order.order_items.each do |item| %>
+ <div>
+    <p>Item Name: <%= item.item.name %></p>
+    <p>Quantity: <%= item.quantity %></p>
+    <p>Shipping Cost: <%= item.shipping_cost %></p>
+    <p>Discount: <%= item.discount %></p>
+    <p>Price: <%= item.price %></p>
+    ------------------------------------
+ </div>
+<% end %>
+
+<h2>Feedback </h2>
+
+<% if @feedbacks.any? %>
+  <% @feedbacks.each do |feedback| %>
+    <p>Rate:<%= feedback.rating %></p>
+    <p>Comment:<%= feedback.comment %></p>
+    <p>Customer:<%= feedback.customer.name %></p>
+    --==---==---====-----=====---===----
+  <% end %>
+<% else %>
+  <p>No feedbacks</p>
+<% end %>
+
+<br><br>
+<%= render partial: 'feedbacks/feedbackform', locals: { feedback: @feedback } %>

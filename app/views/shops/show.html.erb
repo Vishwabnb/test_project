@@ -1,0 +1,97 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @shop.name %>
+</p>
+
+<p>
+  <strong>Phone no:</strong>
+  <%= @shop.phone_no %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @shop.address %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @shop.city %>
+</p>
+
+<p>
+  <strong>Open time:</strong>
+  <%= @shop.open_time %>
+</p>
+
+<p>
+  <strong>Close time:</strong>
+  <%= @shop.close_time %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= link_to @shop.website, @shop.website, target: "_blank" %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @shop.email %>
+</p>
+
+<p>
+  <strong>Owner:</strong>
+  <% @shop.owners.each do |owner| %>
+    <%= owner.name %><br>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_shop_path(@shop) %> |
+<%= link_to 'Back', shops_path %>
+<br>
+
+<h1>Owner details </h1>
+<div>
+  <% @shop.owners.each do |owner| %>
+    <p>Owner: <%= owner.name%></p>
+    <p>address: <%= owner.address%></p>
+    <p>Contact: <%= owner.phone%></p>
+    <p>Email: <%= owner.email%></p>
+    <p>Dob: <%= owner.dob%></p>
+    ---------------------------
+  <% end %>
+</div>
+<br><br>
+
+
+<h1>feedbacks</h1>
+<% @shop.customers.each do |customer| %>
+  <% customer.orders.each do |order| %>
+    <% order.order_items.each do |order_item| %>
+      <p>order_item ID: <%= order_item.id %></p>
+      <p>Order ID: <%= order.id %></p>
+      <p>customer name: <%= order.customer.name %></p>
+        <p>Order Item name: <%= order_item.item.name%></p>
+        <p>Price: <%= order_item.price %></p>
+        -------------------------------------
+    <% end %>
+  <% end %>
+<% end %>
+
+
+<h2><%= @shop.name %></h2>
+<% if @feedbacks.any? %>
+  <% @feedbacks.each do |feedback| %>
+    <p>Rate:<%= feedback.rating %></p>
+    <p>Comment:<%= feedback.comment %></p>
+    <p>Customer:<%= feedback.customer_id %></p>
+--==---==---====-----=====---===----
+  <% end %>
+<% else %>
+  <p>No feedbacks</p>
+<% end %>
+
+
+<br><br>
+<%= render partial: 'feedbacks/feedbackform', locals: { feedback: @feedback } %>

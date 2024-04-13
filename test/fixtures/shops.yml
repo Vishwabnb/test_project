@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  phone_no: MyString
+  address: MyString
+  city: MyString
+  open_time: 2024-04-02 15:00:45
+  close_time: 2024-04-02 15:00:45
+  website: MyString
+  email: MyString
+  owner: one
+
+two:
+  name: MyString
+  phone_no: MyString
+  address: MyString
+  city: MyString
+  open_time: 2024-04-02 15:00:45
+  close_time: 2024-04-02 15:00:45
+  website: MyString
+  email: MyString
+  owner: two

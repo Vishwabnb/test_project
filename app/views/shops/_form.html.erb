@@ -1,0 +1,58 @@
+<%= form_with(model: shop, local: true) do |form| %>
+  <% if shop.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(shop.errors.count, "error") %> prohibited this shop from being saved:</h2>
+      <% shop.errors.full_messages.each do |message| %>
+        <h4><%= message %></h4>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone_no %>
+    <%= form.text_field :phone_no %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :city %>
+    <%= form.text_field :city %>
+  </div>
+
+  <div class="field">
+    <%= form.label :open_time %>
+    <%= form.time_select :open_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :close_time %>
+    <%= form.time_select :close_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :website %>
+    <%= form.text_field :website %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <%= form.label :owner_ids, "Select Owners" %>
+  <%= form.collection_select :owner_ids, Owner.all, :id, :name, {}, { multiple: true } %>
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
