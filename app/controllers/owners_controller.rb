@@ -1,5 +1,6 @@
 class OwnersController < ApplicationController
   before_action :set_owner, only: %i[ show edit update destroy ]
+  before_action :authenticate_customer!
 
   # GET /owners or /owners.json
   def index
