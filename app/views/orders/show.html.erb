@@ -39,8 +39,8 @@
   <%= @order.grand_total %>
 </p>
 
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
+<%= link_to 'Edit', edit_order_path(@order), class: 'btn btn-primary' %> |
+<%= link_to 'Back', orders_path,class: 'btn btn-primary'  %>
 
 <br><br>
 <h1>Order Items</h1>

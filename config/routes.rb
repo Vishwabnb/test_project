@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   resources :shops
   
   resources :owners
+  root 'customers#index'
 end
