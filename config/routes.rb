@@ -16,5 +16,6 @@ Rails.application.routes.draw do
   resources :shops
   
   resources :owners
-  root 'customers#index'
+  root to: 'customers#index'
+
 end
