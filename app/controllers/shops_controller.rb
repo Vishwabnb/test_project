@@ -43,7 +43,6 @@ class ShopsController < ApplicationController
     respond_to do |format|
       if @shop.update(shop_params)
         format.html { redirect_to shop_url(@shop), notice: "Shop was successfully updated." }
-        puts"-----------------------show#{shop}"
         format.json { render :show, status: :ok, location: @shop }
       else
         format.html { render :edit, status: :unprocessable_entity }

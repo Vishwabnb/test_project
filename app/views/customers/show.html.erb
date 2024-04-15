@@ -19,6 +19,10 @@
   <strong>City:</strong>
   <%= @customer.city %>
 </p>
+<p>
+  <strong>Email:</strong>
+  <%= @customer.email %>
+</p>
 
 <p>
   <strong>Shop:</strong>
@@ -26,7 +30,7 @@
 </p>
 
 <%= link_to 'Edit', edit_customer_path(@customer),class: 'btn btn-primary'  %> |
-<%= link_to 'Back', customers_path, class: 'btn btn-primary'  %>
+<%= link_to 'Back', customers_path, class: 'btn btn-primary'  %>  <br>
 
 <h1>Orders</h1>
 

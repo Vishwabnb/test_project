@@ -10,7 +10,7 @@
 
   <div class="field">
     <%= form.label :amount %>
-    <%= form.text_field :amount %>
+    <%= form.text_field :amount, { class: 'form-control' } %>
   </div>
 
   <div class="field">
@@ -20,17 +20,17 @@
 
   <div class="field">
     <%= form.label :order_id, "Select order" %>
-    <%= form.collection_select :order_id ,Order.all,:id,:customer_id, {include_blank: 'Select order'}%>
+    <%= form.collection_select :order_id ,Order.all,:id,:id, {include_blank: 'Select order'}, { class: 'form-control' }%>
   </div>
 
   <div class="field">
     <%= form.label :status %>
-    <%= form.text_field :status %>
+    <%= form.text_field :status, { class: 'form-control' } %>
   </div>
 
   <div class="field">
     <%= form.label :method %>
-    <%= form.text_field :method %>
+    <%= form.text_field :method, { class: 'form-control' } %>
   </div>
 
   <div class="actions">

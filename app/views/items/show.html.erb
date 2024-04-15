@@ -34,7 +34,8 @@
   <% @feedbacks.each do |feedback| %>
     <p>Rate:<%= feedback.rating %></p>
     <p>Comment:<%= feedback.comment %></p>
-    <p>Customer:<%= feedback.customer.name %></p> 
+    <p>Customer:<%= feedback.customer.name %></p>
+    <P>Created Date:<%=feedback.created_at %></p>
     --==---==---====-----=====---===----
 
   <% end %>
