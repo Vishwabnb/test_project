@@ -25,8 +25,8 @@
   <%= @customer.shop.name %>
 </p>
 
-<%= link_to 'Edit', edit_customer_path(@customer) %> |
-<%= link_to 'Back', customers_path %>
+<%= link_to 'Edit', edit_customer_path(@customer),class: 'btn btn-primary'  %> |
+<%= link_to 'Back', customers_path, class: 'btn btn-primary'  %>
 
 <h1>Orders</h1>
 

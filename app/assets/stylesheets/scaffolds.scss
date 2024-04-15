@@ -1,12 +1,13 @@
 body {
   background-color: #fff;
   color: #333;
-  margin: 33px;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
+  padding-bottom: 20%;
   line-height: 18px;
-}
+  overflow-y: auto; /* Scrollbar ko show karne ke liye */
 
+}
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
@@ -23,7 +24,7 @@ a {
   color: #000;
 
   &:visited {
-    color: #000000;
+    color: #040404;
   }
 
   &:hover {
@@ -87,6 +88,17 @@ li a {
   text-decoration: none;
 }
 header {
-  background-color: rgb(68, 130, 148);
+  background-color: rgb(223, 207, 207);
+  width: 100%;
 
+}
+
+footer {
+  width: 100%;
+  background-color: rgb(223, 207, 207);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 20px 0;
+  text-align: center;
 }
