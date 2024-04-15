@@ -14,6 +14,13 @@
   <strong>Customer:</strong>
   <%= @feedback.customer.name %>
 </p>
+<p>
+  <strong>feedbackname:</strong>
+  <%= @feedback.feedbackable.name %>
+</p><p>
+  <strong>created_at:</strong>
+  <%= @feedback.created_at %>
+</p>
 
 <%= link_to 'Edit', edit_feedback_path(@feedback),class: 'btn btn-primary'  %> |
 <%= link_to 'Back', feedbacks_path,class: 'btn btn-primary'  %>
