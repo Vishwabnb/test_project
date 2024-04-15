@@ -10,42 +10,42 @@
 
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name , { class: 'form-control' }%>
   </div>
 
   <div class="field">
     <%= form.label :phone_no %>
-    <%= form.text_field :phone_no %>
+    <%= form.text_field :phone_no, { class: 'form-control' } %>
   </div>
 
   <div class="field">
     <%= form.label :address %>
-    <%= form.text_field :address %>
+    <%= form.text_field :address, { class: 'form-control' } %>
   </div>
 
   <div class="field">
     <%= form.label :city %>
-    <%= form.text_field :city %>
+    <%= form.text_field :city, { class: 'form-control' } %>
   </div>
 
   <div class="field">
     <%= form.label :open_time %>
-    <%= form.time_select :open_time %>
+    <%= form.time_select :open_time , { class: 'form-control' }%>
   </div>
 
   <div class="field">
     <%= form.label :close_time %>
-    <%= form.time_select :close_time %>
+    <%= form.time_select :close_time, { class: 'form-control' } %>
   </div>
 
   <div class="field">
     <%= form.label :website %>
-    <%= form.text_field :website %>
+    <%= form.text_field :website, { class: 'form-control' } %>
   </div>
 
   <div class="field">
     <%= form.label :email %>
-    <%= form.text_field :email %>
+    <%= form.text_field :email, { class: 'form-control' } %>
   </div>
 
   <%= form.label :owner_ids, "Select Owners" %>

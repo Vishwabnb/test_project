@@ -11,7 +11,6 @@
     </div>
   <% end %>
 
-
   <% if @shop %>
     <%= form.hidden_field :feedbackable_type, value: "Shop" %>
     <%= form.hidden_field :feedbackable_id, value: @shop.id %>
@@ -28,17 +27,17 @@
 
   <div class="field">
     <%= form.label :rating %>
-    <%= form.number_field :rating %>
+    <%= form.number_field :rating ,{ class: 'form-control' }%>
   </div>
 
   <div class="field">
     <%= form.label :comment %>
-    <%= form.text_area :comment %>
+    <%= form.text_area :comment,{ class: 'form-control' } %>
   </div>
 
   <div class="field">
     <%= form.label :customer_id , "Select Customer"%>
-    <%= form.collection_select :customer_id, Customer.all,:id,:name ,{include_blank: "Select Customer"} %>
+   <%= form.collection_select :customer_id,  Customer.where(id: current_customer.id), :id, :name, { selected: current_customer }, { class: 'form-control' } %>
   </div>
 
  

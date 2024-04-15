@@ -10,27 +10,27 @@
 
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name , { class: 'form-control' }%>
   </div>
 
   <div class="field">
     <%= form.label :description %>
-    <%= form.text_area :description %>
+    <%= form.text_area :description , { class: 'form-control' }%>
   </div>
 
   <div class="field">
     <%= form.label :price %>
-    <%= form.text_field :price %>
+    <%= form.text_field :price, { class: 'form-control' } %>
   </div>
 
   <div class="field">
     <%= form.label :category_id, "Select Category" %>
-    <%= form.collection_select :category_id, Category.all, :id , :name, {include_blank: "Select Category"} %>
+    <%= form.collection_select :category_id, Category.all, :id , :name, {include_blank: "Select Category"}, { class: 'form-control' } %>
   </div>
 
   <div class="field">
     <%= form.label :stock %>
-    <%= form.number_field :stock %>
+    <%= form.number_field :stock, { class: 'form-control' } %>
   </div>
 
   <div class="actions">

@@ -10,37 +10,37 @@
 
   <div class="field">
   <%= form.label :order_id, "Select order" %>
-  <%= form.collection_select :order_id, Order.all, :id, :id, {include_blank: 'Select order'} %>
+  <%= form.collection_select :order_id, Order.all, :id, :id, {include_blank: 'Select order'}, { class: 'form-control' } %>
   </div>
 
   <div class="field">
     <%= form.label :item_id, "Select Item" %>
-    <%= form.collection_select :item_id,Item.all,:id , :name , {include_blank: 'Select Item'} %>
+    <%= form.collection_select :item_id,Item.all,:id , :name , {include_blank: 'Select Item'},{ class: 'form-control' } %>
   </div>
 
   <div class="field">
     <%= form.label :quantity %>
-    <%= form.number_field :quantity %>
+    <%= form.number_field :quantity ,{ class: 'form-control' }%>
   </div>
 
   <div class="field">
     <%= form.label :price %>
-    <%= form.text_field :price %>
+    <%= form.text_field :price,{ class: 'form-control' } %>
   </div>
 
   <div class="field">
     <%= form.label :discount %>
-    <%= form.text_field :discount %>
+    <%= form.text_field :discount ,{ class: 'form-control' }%>
   </div>
 
   <div class="field">
     <%= form.label :tax %>
-    <%= form.text_field :tax %>
+    <%= form.text_field :tax,{ class: 'form-control' } %>
   </div>
 
   <div class="field">
     <%= form.label :shipping_cost %>
-    <%= form.text_field :shipping_cost %>
+    <%= form.text_field :shipping_cost, { class: 'form-control' } %>
   </div>
 
   <div class="actions">

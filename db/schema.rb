@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_04_12_085323) do
+ActiveRecord::Schema.define(version: 2024_04_15_112045) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 2024_04_12_085323) do
     t.datetime "updated_at", null: false
     t.string "feedbackable_type"
     t.integer "feedbackable_id"
+    t.string "feedbackname"
     t.index ["customer_id"], name: "index_feedbacks_on_customer_id"
     t.index ["feedbackable_type", "feedbackable_id"], name: "index_feedbacks_on_feedbackable_type_and_feedbackable_id"
   end
