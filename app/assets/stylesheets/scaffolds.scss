@@ -89,7 +89,6 @@ li a {
 header {
   background-color: rgb(223, 207, 207);
   width: 100%;
-
 }
 
 footer {
@@ -101,3 +100,8 @@ footer {
   padding: 20px 0;
   text-align: center;
 }
+.alert {
+  color: red;
+  font-size: 18px;
+  font-weight: 900;
+} 

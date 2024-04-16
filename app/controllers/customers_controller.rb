@@ -20,6 +20,12 @@ class CustomersController < ApplicationController
 
   # GET /customers/1/edit
   def edit
+    @customer = Customer.find_by(id: params[:id])
+    if @customer != current_customer
+      flash[:alert] = "You can only edit your own profile."
+      redirect_to customers_path
+      
+    end
   end
 
   # POST /customers or /customers.json
@@ -39,6 +45,7 @@ class CustomersController < ApplicationController
 
   # PATCH/PUT /customers/1 or /customers/1.json
   def update
+    @customer = current_customer
     respond_to do |format|
       if @customer.update(customer_params)
         format.html { redirect_to customer_url(@customer), notice: "Customer was successfully updated." }
@@ -52,23 +59,24 @@ class CustomersController < ApplicationController
 
   # DELETE /customers/1 or /customers/1.json
   def destroy
-    @customer.destroy
-
-    respond_to do |format|
-      format.html { redirect_to customers_url, notice: "Customer was successfully destroyed." }
-      format.json { head :no_content }
+    @customer = Customer.find_by(id: params[:id])
+    if  @customer != current_customer
+      flash[:alert] = "You can only delete your own profile."
+      redirect_to customers_path
+    else
+      @customer.destroy
+      redirect_to customers_path, notice: 'Customer deleted successfully'
     end
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_customer
-      @customer = Customer.find(params[:id])
+      @customer = Customer.find_by(id: params[:id])
     end
-    
+
     # Only allow a list of trusted parameters through.
     def customer_params
       params.require(:customer).permit(:name, :contact_no, :address, :city, :shop_id, :email, :password, :password_confirmation)
     end
-     
 end

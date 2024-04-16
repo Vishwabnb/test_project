@@ -37,7 +37,7 @@
 
   <div class="field">
     <%= form.label :customer_id , "Select Customer"%>
-   <%= form.collection_select :customer_id,  Customer.where(id: current_customer.id), :id, :name, { selected: current_customer }, { class: 'form-control' } %>
+   <%= form.collection_select :customer_id, Customer.where(id: current_customer.id), :id, :name, { selected: current_customer }, { class: 'form-control' } %>
   </div>
 
  
